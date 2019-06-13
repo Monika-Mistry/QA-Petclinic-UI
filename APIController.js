@@ -31,21 +31,39 @@ function promises(req) {
 }
 
 function resolved(result) {
-    //create table tags
-    let node = document.createElement("tbody");
-    node.setAttribute("id", "treturn");
-    document.getElementById("results").appendChild(node);
-
-    for (let i = 0; i < result.length; i++) {
-        //output to table
+    if (result[0] !== undefined || result.id !== undefined) {
+        //create table tags
+        let node = document.createElement("tbody");
+        node.setAttribute("id", "treturn");
+        document.getElementById("results").appendChild(node);
         let tr = "<tr>";
-        let petstring = "";
-        for (let j = 0; j < result.pets.length; j++) {
-            petsting += result.pets[j].name + ", ";
+
+        if (result[0] !== undefined) {
+            for (let i = 0; i < result.length; i++) {
+                //output to table
+                let petstring = "";
+                for (let j = 0; j < result.pets.length; j++) {
+                    petstring += result.pets[j].name + ", ";
+                }
+                tr += "<td>" + result[i].id + "</td><td>$" + result[i].firstName + "</td><td>$" + result[i].lastName + "</td><td>$" + result[i].address + "</td><td>$" + result[i].city + "</td><td>$" + result[i].telephone + "</td><td>$" + petstring + "</td></tr>";
+                tbody.innerHTML += tr;
+            }
+        } else {
+            let petstring = "";
+            for (let j = 0; j < result.pets.length; j++) {
+                petstring += result.pets[j].name + ", ";
+            }
+            tr += "<td>" + result[i].id + "</td><td>$" + result[i].firstName + "</td><td>$" + result[i].lastName + "</td><td>$" + result[i].address + "</td><td>$" + result[i].city + "</td><td>$" + result[i].telephone + "</td><td>$" + petstring + "</td></tr>";
+            tbody.innerHTML += tr;
         }
-        tr += "<td>" + result[i].id + "</td><td>$" + result[i].firstName + "</td><td>$" + result[i].lastName + "</td><td>$" + result[i].address + "</td><td>$" + result[i].city + "</td><td>$" + result[i].telephone + "</td><td>$" + petstring + "</td></tr>";
-        tbody.innerHTML += tr;
+    } else {
+        let textnode = document.createTextNode("Success!");
+        let node = document.createElement("div");
+        node.setAttribute("id", "return");
+        node.appendChild(textnode);
+        document.getElementById("results").appendChild(node);
     }
+
 
 }
 
