@@ -1,0 +1,40 @@
+#button { 
+ background-color: #03500c ;
+} 
+       #topbox {
+  background-color: rgba(25, 154, 91, 0.53);
+  padding: 30px ;
+
+}
+
+  #maintext{
+  background-color: rgba(232, 224, 192, 0.5);
+    width:50%;
+    height:700px;
+  }
+       
+  body {
+ background-image: url("lowqualphoto.jpg"); /* The image used */
+  background-color: #000000; /* Used if the image is unavailable */
+  height: 100%; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+ #Bottombar{
+     background-color: rgba(25, 154, 91, 0.53);
+    height:60px;
+
+
+  }
+  #image{
+width:200px;height:80px;
+  }
+
+  #titletext {
+  text-decoration: underline;
+    font-size: 60px;
+      font-family: "Times New Roman", Times, serif;
+
+}
