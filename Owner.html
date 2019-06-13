@@ -9,26 +9,42 @@
       <div>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="Pet.html">Owner</a></li>
-          <li><a href="Owner.html">Vet</a></li>
+          <li><a href="Owner.html">Owner</a></li>
+          <li><a href="Vet.html">Vet</a></li>
         </ul>
       </div>
 
-      <div id="result">
+      <div id="results">
         <h2>Owners</h2>
         <table>
 
         </table>
       </div>
-
+      <div>
+        <!-- change onclick to the right method -->
+        <input type="button" value="Get All Owners" onclick="getAllOwners()">
+      </div>
+      <div>
+        <!-- change onclick to the right method -->
+        <input type="button" value="Search Owner" onclick="searchAnOwner()">
+      </div>
       <div>
         <!-- change onclick to the right method -->
         <input type="button" value="Add Owner" onclick="addOwner()">
       </div>
+      <div>
+        <!-- change onclick to the right method -->
+        <input type="button" value="Remove Owner" onclick="removeOwner()">
+      </div>
+      <div>
+        <!-- change onclick to the right method -->
+        <input type="button" value="Update Owner" onclick="updateOwner()">
+      </div>
+
 
     </form>
     <!-- change the JavaScript file -->
-    <script src="httprequest.js"></script>
+    <script src="jsfilehere"></script>
   </body>
 
 </html>
