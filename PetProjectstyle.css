@@ -1,6 +1,6 @@
-#button { 
+#button {
  background-color: #03500c ;
-} 
+}
        #topbox {
   background-color: rgba(25, 154, 91, 0.53);
   padding: 30px ;
@@ -9,10 +9,10 @@
 
   #maintext{
   background-color: rgba(232, 224, 192, 0.5);
-    width:50%;
+    width:100%;
     height:700px;
   }
-       
+
   body {
  background-image: url("lowqualphoto.jpg"); /* The image used */
   background-color: #000000; /* Used if the image is unavailable */
