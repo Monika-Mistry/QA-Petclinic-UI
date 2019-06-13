@@ -1,6 +1,6 @@
-$.getScript("APIController.js", makeRequest(method, url, body) {
-    makeRequest(method, url, body);
-});
+// $.getScript("APIController.js", makeRequest(method, url, body) {
+//     makeRequest(method, url, body);
+// });
 
 const getAllOwners = () => {
     let url ="http://localhost:9966/petclinic/api/owners";
