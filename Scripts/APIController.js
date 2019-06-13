@@ -30,13 +30,12 @@ function promises(req) {
 
 function resolved(result) {
     if (result[0] !== undefined || result.id !== undefined) {
-        //create table tags
+        //create table tags and headings
         let node = document.createElement("tbody");
         node.setAttribute("id", "tbody");
         document.getElementById("results").appendChild(node);
         let tr = "<tr>";
         tr += "<td>|-- ID --|</td><td>|---- First Name ----|</td><td>|---- Last Name ----|</td><td>|---------- Address ----------|</td><td>|------ City ------|</td><td>|---- Telephone Number ----|</td><td>|-------- Pets --------|</td></tr>";
-        // tbody.innerHTML += tr;
         if (result[0] !== undefined) {
             for (let i = 0; i < result.length; i++) {
                 //output to table
@@ -45,7 +44,6 @@ function resolved(result) {
                     petstring += result[i].pets[j].name + ", ";
                 }
                 tr += "<td>" + result[i].id + "   </td><td>" + result[i].firstName + "   </td><td>" + result[i].lastName + "   </td><td>" + result[i].address + "   </td><td>" + result[i].city + "   </td><td>" + result[i].telephone + "   </td><td>" + petstring + "   </td></tr>";
-                // tbody.innerHTML += tr;
             }
             tbody.innerHTML += tr;
         } else {
