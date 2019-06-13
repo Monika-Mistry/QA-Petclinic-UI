@@ -47,8 +47,6 @@ const deleteOwner = () => {
 }
 
 const updateOwner = () => {
-    let id = document.getElementById("ownerId");
-    //owner id
     const address = Number(document.getElementById("address").value);
     const city = document.getElementById("city").value;
     const firstName = document.getElementById("firstName").value;
