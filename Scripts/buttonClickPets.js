@@ -2,22 +2,24 @@ $.getScript("APIController.js", makeRequest(method, url, body) {
     makeRequest(method, url, body);
 });
 
-const addNewPet = () => {
+const addPet = () => {
     //add owner object properties from fields in HTML
-    const birthdatte = Number(document.getElementById("address").value);
-    const city = document.getElementById("city").value;
-    const firstName = document.getElementById("firstName").value;
-    const id = document.getElementById("ownerId").value;
-    const lastName = document.getElementById("lastName").value;
-    const telephone = document.getElementById("telephone").value;
+    const birthDate = Number(document.getElementById("birthDate").value);
+    const id = document.getElementById("id").value;
+    const name = document.getElementById("name").value;
+    const type = { type: type, id: id, name: name };
     const owner = { address: address, city: city, firstName: firstName, id: id, lastName: lastName, pets: pets, telephone: telephone };
-    let url = "http://localhost:9966/petclinic/api/owners";
+    const visits = { date: date, description: description, id: id, pet: pet };
+    const newPet = {birthDate: birthDate, id: id, name: name, owner: owner, type: type, visits: visits };
+
+    let url = "http://localhost:9966/petclinic/api/pets";
     let httpMethod = "POST";
-    makeRequest(httpMethod, url, JSON.stringify(owner));
+    makeRequest(httpMethod, url, JSON.stringify(newPet));
+
 }
 
 const getPets = () => {
-    let url ="http://localhost:9966/petclinic/api/pets";
+    let url = "http://localhost:9966/petclinic/api/pets";
     let httpMethod = "GET";
     makeRequest(httpMethod, url);
 }
@@ -25,7 +27,7 @@ const getPets = () => {
 const getPet = () => {
     //owner id
     let id = document
-    let url =`http://localhost:9966/petclinic/api/pets/{petid}`;
+    let url = `http://localhost:9966/petclinic/api/pets/{petid}`;
     let httpMethod = "GET";
     makeRequest(httpMethod, url);
 }
@@ -33,25 +35,17 @@ const getPet = () => {
 const getPetTypes = () => {
     //owner id
     let id = document
-    let url =`http://localhost:9966/petclinic/api/pets/pettypes`;
+    let url = `http://localhost:9966/petclinic/api/pets/pettypes`;
     let httpMethod = "GET";
     makeRequest(httpMethod, url);
 }
 
-const addPet = () => {
-    //add owner object properties from fields in HTML
-    const Pet = {
 
-    };
-    let url = "http://localhost:9966/petsclinic/api/pets";
-    let httpMethod = "POST";
-    makeRequest(httpMethod, url, JSON.stringify(pets));
-}
 
 const deletePet = () => {
     //owner id
     let id = document
-    let url =`http://localhost:9966/petclinic/api/pets/{petid}`;
+    let url = `http://localhost:9966/petclinic/api/pets/{petid}`;
     let httpMethod = "DELETE";
     makeRequest(httpMethod, url);
 }
@@ -63,7 +57,7 @@ const updatePet = () => {
     const pets = {
 
     };
-    let url =`http://localhost:9966/petclinic/api/pets/{petid}`;
+    let url = `http://localhost:9966/petclinic/api/pets/{petid}`;
     let httpMethod = "DELETE";
     makeRequest(httpMethod, url, JSON.stringify(pets));
 }
