@@ -13,7 +13,6 @@ function makeRequest(reqType, url, body) {
     req.send(body);
 }
 
-
 function promises(req) {
     const createPromise = new Promise(
         function (res, rej) {
@@ -45,7 +44,7 @@ function resolved(result) {
             }
         } else {
             //message output (deleted object)
-
+            let output;
             let node = document.createElement("div");
             node.setAttribute("id", "return");
             node.appendChild(textnode);
