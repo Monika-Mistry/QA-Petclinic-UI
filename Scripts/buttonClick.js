@@ -18,7 +18,7 @@ const getOwnerByLastName = () => {
 
 const getOwnerById = () => {
     //owner id
-    let id = document
+    let id = document.getElementById("ownerId");
     let url = `http://localhost:9966/petclinic/api/owners/{id}`;
     let httpMethod = "GET";
     makeRequest(httpMethod, url);
@@ -40,13 +40,14 @@ const addNewOwner = () => {
 
 const deleteOwner = () => {
     //owner id
-    let id = document
+    let id = document.getElementById("ownerId");
     let url = `http://localhost:9966/petclinic/api/owners/{id}`;
     let httpMethod = "DELETE";
     makeRequest(httpMethod, url);
 }
 
 const updateOwner = () => {
+    let id = document.getElementById("ownerId");
     //owner id
     const address = Number(document.getElementById("address").value);
     const city = document.getElementById("city").value;
