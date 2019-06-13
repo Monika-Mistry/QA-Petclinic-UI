@@ -1,5 +1,3 @@
-
-
 function makeRequest(reqType, url, body) {
     let req = new XMLHttpRequest();
     req.onload = function () {
