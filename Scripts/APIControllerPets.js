@@ -35,23 +35,15 @@ function resolved(result) {
         node.setAttribute("id", "tbody");
         document.getElementById("results").appendChild(node);
         let tr = "<tr>";
-        tr += "<td>|-- ID --|</td><td>|---- First Name ----|</td><td>|---- Last Name ----|</td><td>|---------- Address ----------|</td><td>|------ City ------|</td><td>|---- Telephone Number ----|</td><td>|-------- Pets --------|</td></tr>";
+        tr += "<td>|- ID -|</td><td>|---- Name ----|</td><td>|-- Birth Date --|</td><td>|-- Type --|</td><td>|--- Owner First Name ---|</td><td>|-- Owner Last Name --|</td><td>|-- Telephone Number --|</td><td>|Number of Visits|</td></tr>";
         if (result[0] !== undefined) {
             for (let i = 0; i < result.length; i++) {
                 //output to table
-                let petstring = "";
-                for (let j = 0; j < result[i].pets.length; j++) {
-                    petstring += result[i].pets[j].name + ", ";
-                }
-                tr += "<td>" + result[i].id + "   </td><td>" + result[i].firstName + "   </td><td>" + result[i].lastName + "   </td><td>" + result[i].address + "   </td><td>" + result[i].city + "   </td><td>" + result[i].telephone + "   </td><td>" + petstring + "   </td></tr>";
+                tr += "<td>" + result[i].id + "   </td><td>" + result[i].name + "   </td><td>" + result[i].birthDate + "   </td><td>" + result[i].type.name + "   </td><td>" + result[i].owner.firstName + "   </td><td>" + result[i].owner.lastName + "   </td><td>" + result[i].owner.telephone + "   </td><td>" + result[i].visits.length + "   </td></tr>";
             }
             tbody.innerHTML += tr;
         } else {
-            let petstring = "";
-            for (let j = 0; j < result.pets.length; j++) {
-                petstring += result.pets[j].name + ", ";
-            }
-            tr += "<td>" + result[i].id + "</td><td>$" + result[i].firstName + "</td><td>$" + result[i].lastName + "</td><td>$" + result[i].address + "</td><td>$" + result[i].city + "</td><td>$" + result[i].telephone + "</td><td>$" + petstring + "</td></tr>";
+            tr += "<td>" + result[i].id + "   </td><td>" + result[i].name + "   </td><td>" + result[i].birthDate + "   </td><td>" + result[i].type.name + "   </td><td>" + result[i].owner.firstName + "   </td><td>" + result[i].owner.lastName + "   </td><td>" + result[i].owner.telephone + "   </td><td>" + result[i].visits.length + "   </td></tr>";
             tbody.innerHTML += tr;
         }
     } else {
@@ -68,8 +60,8 @@ function rejected(reason) {
     console.log(reason);
 }
 
-function testClick(){
+function testClick() {
     let type = "GET";
-    let url = "http://localhost:9966/petclinic/api/owners";
+    let url = "http://localhost:9966/petclinic/api/pets";
     makeRequest(type, url)
 }
