@@ -28,11 +28,13 @@
 
 
   }
+  #image{
+width:200px;height:80px;
+  }
 
   #titletext {
   text-decoration: underline;
     font-size: 60px;
       font-family: "Times New Roman", Times, serif;
-  font-weight: bold;
 
 }
